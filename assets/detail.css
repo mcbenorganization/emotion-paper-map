@@ -1,7 +1,7 @@
 .detail-topbar > a:last-child { color: var(--muted); text-decoration: none; }
 .detail-main { width: min(1040px, calc(100% - 2rem)); margin: 0 auto; padding: 8rem 0 5rem; }
 .detail-hero { padding: clamp(2rem, 6vw, 5rem); border: 1px solid var(--line); border-radius: 2rem; background: var(--surface); }
-.detail-hero h1 { max-width: 860px; margin: .6rem 0 1rem; font-size: clamp(1.75rem, 3.5vw, 3.25rem); line-height: 1.12; letter-spacing: -.025em; overflow-wrap: anywhere; }
+.detail-hero h1 { max-width: 820px; margin: .6rem 0 1rem; font-size: clamp(1.5rem, 2.8vw, 2.75rem); line-height: 1.16; letter-spacing: -.018em; overflow-wrap: anywhere; }
 .detail-authors { color: var(--muted); font-size: 1.05rem; }
 .detail-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.4rem 0; }
 .detail-tags span { padding: .45rem .8rem; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); }
@@ -27,5 +27,10 @@
 .evidence-notice p { margin-bottom: 0; }
 .limitation-section { border-color: color-mix(in srgb, var(--accent) 42%, var(--line)); }
 .limitation-section .analysis-boundary { padding: .9rem 1rem; border-radius: .8rem; color: var(--muted); background: var(--bg); }
-.limitation-section li { margin: .7rem 0; line-height: 1.7; }
+.critique-status { display: inline-flex; padding: .4rem .75rem; border-radius: 999px; color: var(--accent); background: var(--accent-soft); font-size: .82rem !important; font-weight: 800; }
+.critique-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; padding: 0; list-style: none; counter-reset: critique; }
+.critique-grid li { counter-increment: critique; padding: 1rem; border: 1px solid var(--line); border-radius: .9rem; background: var(--bg); line-height: 1.7; }
+.critique-grid li::before { content: counter(critique, decimal-leading-zero); display: block; margin-bottom: .35rem; color: var(--accent); font-family: Georgia, serif; font-weight: 800; }
+.critique-grid p { margin: .35rem 0 0; color: var(--muted); font-size: .95rem; }
 @media (max-width: 640px) { .detail-main { padding-top: 6rem; } .detail-hero { border-radius: 1.25rem; } .figure-gallery.layout-pair { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .critique-grid { grid-template-columns: 1fr; } }

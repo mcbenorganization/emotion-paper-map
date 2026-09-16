@@ -21,22 +21,37 @@
     <section class="detail-section"><div class="section-kicker">PROBLEM · MOTIVATION</div><h2>研究动机</h2><p>现有 MER 缺少大规模、细粒度描述性标注，也缺少适配自然语言输出的统一评测。</p><blockquote><strong>摘要证据：</strong> “However, the current community suffers from a lack of large-scale datasets with intensive, descriptive emotion annotations, as well as a multimodal-centric framework to maximize the potential of MLLMs for emotion understanding.”<br>然而,目前的社区缺乏具有密集、描述性情感说明的大规模数据集,以及一个以多模式为中心的框架来最大限度地发挥MLLMs的情感理解潜力。</blockquote></section>
     <section class="detail-section figure-section">
           <div class="section-kicker">MOTIVATION FIGURE · VISUAL VERIFIED</div>
-          <h2>动机图</h2>
-          <figure>
-            <a href="../figures/P001/P001_Fig1_PDFp2_motivation.png" target="_blank"><img src="../figures/P001/P001_Fig1_PDFp2_motivation.png" alt="AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models 动机图"></a>
-            <figcaption><strong>Figure 1</strong> · PDF 第 2 页<br>Emotion complexity analysis. Human emotions are often diverse and coexist simultaneously. Such complex emotional states are difficult to describe using discriminative frameworks. However, MLLMs can generate emotional descriptions, offering new possibilities for complex emotion modeling.</figcaption>
-          </figure>
-          <p>这张图用“情绪多样性”和“多种情绪共存”两个案例说明研究动机：把样本压缩成预定义单标签会丢掉复合、细粒度情绪信息，而多模态大模型可以输出开放式情绪描述。它支持的是问题设定与表达空间的动机，不直接证明模型性能。</p>
+          <h2>动机图 <small>共 1 张</small></h2>
+          <div class="figure-gallery layout-single"><figure>
+              <a href="../figures/P001/P001_Fig1_PDFp2_motivation.png" target="_blank"><img src="../figures/P001/P001_Fig1_PDFp2_motivation.png" alt="AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models 动机图 Figure 1"></a>
+              <figcaption><strong>Figure 1</strong> · PDF 第 2 页<br>Emotion complexity analysis. Human emotions are often diverse and coexist simultaneously. Such complex emotional states are difficult to describe using discriminative frameworks. However, MLLMs can generate emotional descriptions, offering new possibilities for complex emotion modeling.</figcaption>
+              <p>这张图用“情绪多样性”和“多种情绪共存”两个案例说明研究动机：把样本压缩成预定义单标签会丢掉复合、细粒度情绪信息，而多模态大模型可以输出开放式情绪描述。它支持的是问题设定与表达空间的动机，不直接证明模型性能。</p>
+            </figure></div>
         </section>
     <section class="detail-section"><div class="section-kicker">APPROACH · METHOD</div><h2>方法思路</h2><p>构建 MER-Caption、AffectGPT 与 MER-UniBench，并用预融合增强多模态整合。</p><blockquote><strong>摘要证据：</strong> “Utilizing our model-based crowd-sourcing data collection strategy, we construct the largest descriptive emotion dataset to date (by far), featuring over 2K fine-grained emotion categories across 115K samples.”<br>我们利用基于模型的众包数据收集战略,构建了迄今为止(迄今)最大的描述性情感数据集,在115K样本中包含超过2K个精细的情感类别。</blockquote></section>
     <section class="detail-section figure-section">
           <div class="section-kicker">METHOD FIGURE · VISUAL VERIFIED</div>
-          <h2>方法图</h2>
-          <figure>
-            <a href="../figures/P001/P001_Fig3_PDFp5_method.png" target="_blank"><img src="../figures/P001/P001_Fig3_PDFp5_method.png" alt="AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models 方法图"></a>
-            <figcaption><strong>Figure 3</strong> · PDF 第 5 页<br>Model comparison. ALLM and VLLM primarily use modality-specific encoders and align them with the LLM through projection layers. AV-LLM mainly facilitates cross-modal interaction within the language model. In AffectGPT, we move the cross-modal interaction outside the language model and use a pre-fusion operation to enhance multimodal integration.</figcaption>
-          </figure>
-          <p>图中先对比音频 LLM、视频 LLM 和常见音视频 LLM，再给出 AffectGPT。核心差异不是简单增加编码器，而是在进入 LLM 之前加入预融合与投影模块，让音频和视频先发生跨模态交互，再把融合表示与提示词送入语言模型；LoRA 用于参数高效适配。</p>
+          <h2>方法图 <small>共 2 张</small></h2>
+          <div class="figure-gallery layout-single"><figure>
+              <a href="../figures/P001/P001_Fig2_PDFp4_dataset_method.png" target="_blank"><img src="../figures/P001/P001_Fig2_PDFp4_dataset_method.png" alt="AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models 方法图 Figure 2"></a>
+              <figcaption><strong>Figure 2</strong> · PDF 第 4 页<br>Dataset construction pipeline. To create a large-scale dataset with guaranteed label quality, we propose a model-led, human-assisted annotation strategy.</figcaption>
+              <p>这张图展示数据构建方法：先由音频、视频和文本分支结合人类先验生成细粒度描述，再通过音画错配、描述长度和模型众包一致性进行两级筛选。它解释了 MER-Caption 与 MER-Caption+ 的数据是如何产生和清洗的。</p>
+            </figure><figure>
+              <a href="../figures/P001/P001_Fig3_PDFp5_method.png" target="_blank"><img src="../figures/P001/P001_Fig3_PDFp5_method.png" alt="AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models 方法图 Figure 3"></a>
+              <figcaption><strong>Figure 3</strong> · PDF 第 5 页<br>Model comparison. ALLM and VLLM primarily use modality-specific encoders and align them with the LLM through projection layers. AV-LLM mainly facilitates cross-modal interaction within the language model. In AffectGPT, we move the cross-modal interaction outside the language model and use a pre-fusion operation to enhance multimodal integration.</figcaption>
+              <p>图中先对比音频 LLM、视频 LLM 和常见音视频 LLM，再给出 AffectGPT。核心差异不是简单增加编码器，而是在进入 LLM 之前加入预融合与投影模块，让音频和视频先发生跨模态交互，再把融合表示与提示词送入语言模型；LoRA 用于参数高效适配。</p>
+            </figure></div>
+        </section>
+    <section class="detail-section limitation-section">
+          <div class="section-kicker">GPT ANALYSIS · LIMITATIONS</div>
+          <h2>对论文不足的思考</h2>
+          <p class="analysis-boundary">当前仅完成摘要级阅读，尚未系统核验正文实验、消融、失败案例与数据划分；以下是分析者提出的待验证风险，不是作者自述。</p>
+          <ul>
+            <li><strong>核心假设：</strong>数据规模或自动标注质量不等于构念有效性，生成指标也可能偏离真实情感理解。</li>
+            <li><strong>机制证据：</strong>需要检查关键模块是否通过针对性消融和中间表征证据证明了“为什么有效”，而不只是最终指标上升。</li>
+            <li><strong>替代解释：</strong>需要排除增益主要来自更大的基础模型、更多训练数据、提示模板或额外算力，而不是论文声称的核心机制。</li>
+            <li><strong>失败边界：</strong>建议重点检查模态缺失或冲突、细粒度复合情绪、跨文化样本和分布外数据；这些场景更容易暴露方法假设的局限。</li>
+          </ul>
         </section>
     <aside class="evidence-notice"><strong>证据边界</strong><p>页面文字按当前语料状态展示。摘要级说明不等同于全文精读；只有标记为 “VISUAL VERIFIED” 的图片才经过来源、页码、图号与裁剪范围复核。</p></aside>
   </main>

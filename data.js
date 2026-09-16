@@ -6,6 +6,16 @@ window.PAPER_CATALOG = {
     "weekly_updates": [
       {
         "date": "2026-09-16",
+        "title": "详情页排版与不足分析改进",
+        "items": [
+          "标题：缩小论文详情页标题字号和字距，长标题允许安全换行，移动端继续自适应。",
+          "多图：动机图和方法图改为列表结构，支持单列、双栏与自适应网格；构建器根据图数选择默认布局，也允许按图片宽高和文字可读性人工指定。",
+          "P001：新增 Figure 2（PDF p.4）数据构建流程，与 Figure 3（PDF p.5）模型结构图共同作为方法相关图；两张都是横向宽图，因此采用纵向全宽排列。",
+          "不足：114 篇详情页均加入分析者不足思考，覆盖核心假设、机制证据、替代解释和失败边界；摘要级页面明确说明这些是待全文验证的分析者推断。"
+        ]
+      },
+      {
+        "date": "2026-09-16",
         "title": "论文详情页与图证流程",
         "items": [
           "页面：为 114 篇论文生成独立详情页，展示研究动机、方法思路、摘要证据和图证状态；首页卡片增加详情入口。",
@@ -203,22 +213,41 @@ window.PAPER_CATALOG = {
       "detail_url": "papers/p001.html",
       "figures": {
         "motivation": {
-          "image": "figures/P001/P001_Fig1_PDFp2_motivation.png",
-          "figure_number": "Figure 1",
-          "pdf_page": 2,
-          "caption": "Emotion complexity analysis. Human emotions are often diverse and coexist simultaneously. Such complex emotional states are difficult to describe using discriminative frameworks. However, MLLMs can generate emotional descriptions, offering new possibilities for complex emotion modeling.",
-          "description": "这张图用“情绪多样性”和“多种情绪共存”两个案例说明研究动机：把样本压缩成预定义单标签会丢掉复合、细粒度情绪信息，而多模态大模型可以输出开放式情绪描述。它支持的是问题设定与表达空间的动机，不直接证明模型性能。",
-          "source_url": "https://arxiv.org/pdf/2501.16566",
-          "review_status": "visual-verified"
+          "layout": "auto",
+          "items": [
+            {
+              "image": "figures/P001/P001_Fig1_PDFp2_motivation.png",
+              "figure_number": "Figure 1",
+              "pdf_page": 2,
+              "caption": "Emotion complexity analysis. Human emotions are often diverse and coexist simultaneously. Such complex emotional states are difficult to describe using discriminative frameworks. However, MLLMs can generate emotional descriptions, offering new possibilities for complex emotion modeling.",
+              "description": "这张图用“情绪多样性”和“多种情绪共存”两个案例说明研究动机：把样本压缩成预定义单标签会丢掉复合、细粒度情绪信息，而多模态大模型可以输出开放式情绪描述。它支持的是问题设定与表达空间的动机，不直接证明模型性能。",
+              "source_url": "https://arxiv.org/pdf/2501.16566",
+              "review_status": "visual-verified"
+            }
+          ]
         },
         "method": {
-          "image": "figures/P001/P001_Fig3_PDFp5_method.png",
-          "figure_number": "Figure 3",
-          "pdf_page": 5,
-          "caption": "Model comparison. ALLM and VLLM primarily use modality-specific encoders and align them with the LLM through projection layers. AV-LLM mainly facilitates cross-modal interaction within the language model. In AffectGPT, we move the cross-modal interaction outside the language model and use a pre-fusion operation to enhance multimodal integration.",
-          "description": "图中先对比音频 LLM、视频 LLM 和常见音视频 LLM，再给出 AffectGPT。核心差异不是简单增加编码器，而是在进入 LLM 之前加入预融合与投影模块，让音频和视频先发生跨模态交互，再把融合表示与提示词送入语言模型；LoRA 用于参数高效适配。",
-          "source_url": "https://arxiv.org/pdf/2501.16566",
-          "review_status": "visual-verified"
+          "layout": "single",
+          "items": [
+            {
+              "image": "figures/P001/P001_Fig2_PDFp4_dataset_method.png",
+              "figure_number": "Figure 2",
+              "pdf_page": 4,
+              "caption": "Dataset construction pipeline. To create a large-scale dataset with guaranteed label quality, we propose a model-led, human-assisted annotation strategy.",
+              "description": "这张图展示数据构建方法：先由音频、视频和文本分支结合人类先验生成细粒度描述，再通过音画错配、描述长度和模型众包一致性进行两级筛选。它解释了 MER-Caption 与 MER-Caption+ 的数据是如何产生和清洗的。",
+              "source_url": "https://arxiv.org/pdf/2501.16566",
+              "review_status": "visual-verified"
+            },
+            {
+              "image": "figures/P001/P001_Fig3_PDFp5_method.png",
+              "figure_number": "Figure 3",
+              "pdf_page": 5,
+              "caption": "Model comparison. ALLM and VLLM primarily use modality-specific encoders and align them with the LLM through projection layers. AV-LLM mainly facilitates cross-modal interaction within the language model. In AffectGPT, we move the cross-modal interaction outside the language model and use a pre-fusion operation to enhance multimodal integration.",
+              "description": "图中先对比音频 LLM、视频 LLM 和常见音视频 LLM，再给出 AffectGPT。核心差异不是简单增加编码器，而是在进入 LLM 之前加入预融合与投影模块，让音频和视频先发生跨模态交互，再把融合表示与提示词送入语言模型；LoRA 用于参数高效适配。",
+              "source_url": "https://arxiv.org/pdf/2501.16566",
+              "review_status": "visual-verified"
+            }
+          ]
         }
       }
     },

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="持续更新的情感大模型论文分类、问题与方法地图">
+  <title>情感大模型论文地图</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="返回顶部"><span class="brand-mark">情</span><span>Emotion Paper Map</span></a>
+    <nav aria-label="页面导航">
+      <a href="#schools">派别</a>
+      <a href="#papers">论文</a>
+      <a href="#updates">周更</a>
+      <a href="#about">说明</a>
+      <button id="theme-toggle" class="icon-button" type="button" aria-label="切换深浅主题">◐</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">WEEKLY · EVIDENCE-BOUNDED · OPEN</p>
+        <h1>情感大模型<br><span>论文地图</span></h1>
+        <p class="hero-lead">按“解决什么问题、依赖什么机制”组织论文，而不是堆一张越来越长的链接清单。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#papers">浏览论文</a>
+          <a class="button secondary" href="#about">查看周更流程</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="收录统计">
+        <div class="pulse"><span></span> 每周滚动维护</div>
+        <div class="metric-grid">
+          <div><strong id="paper-count">—</strong><span>收录论文</span></div>
+          <div><strong id="school-count">—</strong><span>方法派别</span></div>
+          <div><strong id="year-range">—</strong><span>年份跨度</span></div>
+          <div><strong id="reviewed-count">—</strong><span>已初审</span></div>
+        </div>
+        <p id="updated-at" class="updated">数据加载中…</p>
+      </div>
+    </section>
+
+    <section id="schools" class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow">TAXONOMY</p><h2>先看研究派别</h2></div>
+        <p>分类轴优先考虑问题设定、信息如何进入模型、训练信号和推理方式。一篇论文可以有主派别与次派别。</p>
+      </div>
+      <div id="school-grid" class="school-grid"></div>
+    </section>
+
+    <section id="papers" class="section paper-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">CATALOG</p><h2>论文清单</h2></div>
+        <p id="result-summary" aria-live="polite">正在加载…</p>
+      </div>
+
+      <div class="toolbar" role="search">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="search" type="search" placeholder="搜索标题、作者、问题或方法…" autocomplete="off">
+        </label>
+        <select id="school-filter" aria-label="按派别筛选"><option value="">全部派别</option></select>
+        <select id="year-filter" aria-label="按年份筛选"><option value="">全部年份</option></select>
+        <select id="status-filter" aria-label="按核验状态筛选"><option value="">全部状态</option></select>
+        <select id="sort-order" aria-label="排序方式">
+          <option value="newest">年份：新到旧</option>
+          <option value="oldest">年份：旧到新</option>
+          <option value="title">标题：A 到 Z</option>
+        </select>
+      </div>
+
+      <div id="active-filters" class="active-filters"></div>
+      <div id="paper-list" class="paper-list"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <strong>没有匹配的论文</strong>
+        <p>试试减少关键词或清除筛选条件。</p>
+        <button id="clear-filters" class="button secondary" type="button">清除筛选</button>
+      </div>
+    </section>
+
+    <section id="updates" class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow">CHANGELOG</p><h2>每周更新实况</h2></div>
+        <p>逐周记录新增、排除、摘要补全、分类与质量检查。历史记录只追加，不回写。</p>
+      </div>
+      <div id="weekly-updates" class="update-timeline"></div>
+    </section>
+
+    <section id="about" class="section about">
+      <div><p class="eyebrow">MAINTENANCE</p><h2>一套能长期跑下去的周更流程</h2></div>
+      <ol>
+        <li><span>01</span><div><strong>发现</strong><p>从来源清单同步链接并去重，新条目自动进入待审队列。</p></div></li>
+        <li><span>02</span><div><strong>核验</strong><p>先核元数据与摘要，再补派别、问题与思路；全文证据单独升级。</p></div></li>
+        <li><span>03</span><div><strong>发布</strong><p>校验通过后构建静态网页，可由自有服务器或 GitHub Pages 发布。</p></div></li>
+      </ol>
+      <aside><strong>证据提醒</strong><p>“摘要级已核验”只表示页面文字可追溯到摘要，不表示论文的完整方法、实验或创新强度已经审过。</p></aside>
+    </section>
+  </main>
+
+  <footer>
+    <p>情感大模型论文地图 · 学术内容持续核验中</p>
+    <p>Built for weekly review, not link hoarding.</p>
+  </footer>
+  <script src="data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

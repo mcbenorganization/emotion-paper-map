@@ -3,62 +3,62 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models ?????????????">
-  <title>AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models ? Emotion Paper Map</title>
+  <meta name="description" content="AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models 的研究动机、方法思路与图证">
+  <title>AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models · Emotion Paper Map</title>
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="../assets/detail.css">
 </head>
 <body>
-  <header class="topbar detail-topbar"><a class="brand" href="../index.html"><span class="brand-mark">?</span><span>Emotion Paper Map</span></a><a href="../index.html#papers">? ??????</a></header>
+  <header class="topbar detail-topbar"><a class="brand" href="../index.html"><span class="brand-mark">情</span><span>Emotion Paper Map</span></a><a href="../index.html#papers">← 返回论文列表</a></header>
   <main class="detail-main">
     <article class="detail-hero">
-      <p class="eyebrow">2025 ? ICML</p>
+      <p class="eyebrow">2025 · ICML</p>
       <h1>AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models</h1>
-      <p class="detail-authors">Zheng Lian ? Hao-Yu Chen ? Lan Chen ? Haiyang Sun ? Licai Sun ? Yong Ren ? Zebang Cheng ? Bin Liu ? Rui Liu ? Xiao-Jiang Peng ? Jiangyan Yi ? Jianhua Tao</p>
-      <div class="detail-tags"><span>???????</span><span>??????</span><span>abstract-only</span></div>
-      <div class="detail-actions"><a class="button primary" href="https://arxiv.org/pdf/2501.16566" target="_blank" rel="noreferrer">??PDF ?</a></div>
+      <p class="detail-authors">Zheng Lian · Hao-Yu Chen · Lan Chen · Haiyang Sun · Licai Sun · Yong Ren · Zebang Cheng · Bin Liu · Rui Liu · Xiao-Jiang Peng · Jiangyan Yi · Jianhua Tao</p>
+      <div class="detail-tags"><span>数据与评测驱动</span><span>摘要级已核验</span><span>abstract-only</span></div>
+      <div class="detail-actions"><a class="button primary" href="https://arxiv.org/pdf/2501.16566" target="_blank" rel="noreferrer">打开PDF ↗</a></div>
     </article>
-    <section class="detail-section"><div class="section-kicker">PROBLEM ? MOTIVATION</div><h2>????</h2><p>?? MER ????????????????????????????????</p><blockquote><strong>?????</strong> ?However, the current community suffers from a lack of large-scale datasets with intensive, descriptive emotion annotations, as well as a multimodal-centric framework to maximize the potential of MLLMs for emotion understanding.?<br>??,??????????????????????????,??????????????????????MLLMs????????</blockquote></section>
+    <section class="detail-section"><div class="section-kicker">PROBLEM · MOTIVATION</div><h2>研究动机</h2><p>现有 MER 缺少大规模、细粒度描述性标注，也缺少适配自然语言输出的统一评测。</p><blockquote><strong>摘要证据：</strong> “However, the current community suffers from a lack of large-scale datasets with intensive, descriptive emotion annotations, as well as a multimodal-centric framework to maximize the potential of MLLMs for emotion understanding.”<br>然而,目前的社区缺乏具有密集、描述性情感说明的大规模数据集,以及一个以多模式为中心的框架来最大限度地发挥MLLMs的情感理解潜力。</blockquote></section>
     <section class="detail-section figure-section">
-          <div class="section-kicker">MOTIVATION FIGURE ? VISUAL VERIFIED</div>
-          <h2>??? <small>? 1 ?</small></h2>
+          <div class="section-kicker">MOTIVATION FIGURE · VISUAL VERIFIED</div>
+          <h2>动机图 <small>共 1 张</small></h2>
           <div class="figure-gallery layout-single"><figure>
-              <a href="../figures/P001/P001_Fig1_PDFp2_motivation.png" target="_blank"><img src="../figures/P001/P001_Fig1_PDFp2_motivation.png" alt="AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models ??? Figure 1"></a>
-              <figcaption><strong>Figure 1</strong> ? PDF ? 2 ?<br>Emotion complexity analysis. Human emotions are often diverse and coexist simultaneously. Such complex emotional states are difficult to describe using discriminative frameworks. However, MLLMs can generate emotional descriptions, offering new possibilities for complex emotion modeling.</figcaption>
-              <p>????????????????????????????????????????????????????????????????????????????????????????????????????????</p>
+              <a href="../figures/P001/P001_Fig1_PDFp2_motivation.png" target="_blank"><img src="../figures/P001/P001_Fig1_PDFp2_motivation.png" alt="AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models 动机图 Figure 1"></a>
+              <figcaption><strong>Figure 1</strong> · PDF 第 2 页<br>Emotion complexity analysis. Human emotions are often diverse and coexist simultaneously. Such complex emotional states are difficult to describe using discriminative frameworks. However, MLLMs can generate emotional descriptions, offering new possibilities for complex emotion modeling.</figcaption>
+              <p>这张图用“情绪多样性”和“多种情绪共存”两个案例说明研究动机：把样本压缩成预定义单标签会丢掉复合、细粒度情绪信息，而多模态大模型可以输出开放式情绪描述。它支持的是问题设定与表达空间的动机，不直接证明模型性能。</p>
             </figure></div>
         </section>
-    <section class="detail-section"><div class="section-kicker">APPROACH ? METHOD</div><h2>????</h2><p>?? MER-Caption?AffectGPT ? MER-UniBench??????????????</p><blockquote><strong>?????</strong> ?Utilizing our model-based crowd-sourcing data collection strategy, we construct the largest descriptive emotion dataset to date (by far), featuring over 2K fine-grained emotion categories across 115K samples.?<br>?????????????????,???????(??)???????????,?115K???????2K?????????</blockquote></section>
+    <section class="detail-section"><div class="section-kicker">APPROACH · METHOD</div><h2>方法思路</h2><p>构建 MER-Caption、AffectGPT 与 MER-UniBench，并用预融合增强多模态整合。</p><blockquote><strong>摘要证据：</strong> “Utilizing our model-based crowd-sourcing data collection strategy, we construct the largest descriptive emotion dataset to date (by far), featuring over 2K fine-grained emotion categories across 115K samples.”<br>我们利用基于模型的众包数据收集战略,构建了迄今为止(迄今)最大的描述性情感数据集,在115K样本中包含超过2K个精细的情感类别。</blockquote></section>
     <section class="detail-section figure-section">
-          <div class="section-kicker">METHOD FIGURE ? VISUAL VERIFIED</div>
-          <h2>??? <small>? 2 ?</small></h2>
+          <div class="section-kicker">METHOD FIGURE · VISUAL VERIFIED</div>
+          <h2>方法图 <small>共 2 张</small></h2>
           <div class="figure-gallery layout-single"><figure>
-              <a href="../figures/P001/P001_Fig2_PDFp4_dataset_method.png" target="_blank"><img src="../figures/P001/P001_Fig2_PDFp4_dataset_method.png" alt="AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models ??? Figure 2"></a>
-              <figcaption><strong>Figure 2</strong> ? PDF ? 4 ?<br>Dataset construction pipeline. To create a large-scale dataset with guaranteed label quality, we propose a model-led, human-assisted annotation strategy.</figcaption>
-              <p>????????????????????????????????????????????????????????????????????? MER-Caption ? MER-Caption+ ?????????????</p>
+              <a href="../figures/P001/P001_Fig2_PDFp4_dataset_method.png" target="_blank"><img src="../figures/P001/P001_Fig2_PDFp4_dataset_method.png" alt="AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models 方法图 Figure 2"></a>
+              <figcaption><strong>Figure 2</strong> · PDF 第 4 页<br>Dataset construction pipeline. To create a large-scale dataset with guaranteed label quality, we propose a model-led, human-assisted annotation strategy.</figcaption>
+              <p>这张图展示数据构建方法：先由音频、视频和文本分支结合人类先验生成细粒度描述，再通过音画错配、描述长度和模型众包一致性进行两级筛选。它解释了 MER-Caption 与 MER-Caption+ 的数据是如何产生和清洗的。</p>
             </figure><figure>
-              <a href="../figures/P001/P001_Fig3_PDFp5_method.png" target="_blank"><img src="../figures/P001/P001_Fig3_PDFp5_method.png" alt="AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models ??? Figure 3"></a>
-              <figcaption><strong>Figure 3</strong> ? PDF ? 5 ?<br>Model comparison. ALLM and VLLM primarily use modality-specific encoders and align them with the LLM through projection layers. AV-LLM mainly facilitates cross-modal interaction within the language model. In AffectGPT, we move the cross-modal interaction outside the language model and use a pre-fusion operation to enhance multimodal integration.</figcaption>
-              <p>??????? LLM??? LLM ?????? LLM???? AffectGPT???????????????????? LLM ?????????????????????????????????????????????LoRA ?????????</p>
+              <a href="../figures/P001/P001_Fig3_PDFp5_method.png" target="_blank"><img src="../figures/P001/P001_Fig3_PDFp5_method.png" alt="AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models 方法图 Figure 3"></a>
+              <figcaption><strong>Figure 3</strong> · PDF 第 5 页<br>Model comparison. ALLM and VLLM primarily use modality-specific encoders and align them with the LLM through projection layers. AV-LLM mainly facilitates cross-modal interaction within the language model. In AffectGPT, we move the cross-modal interaction outside the language model and use a pre-fusion operation to enhance multimodal integration.</figcaption>
+              <p>图中先对比音频 LLM、视频 LLM 和常见音视频 LLM，再给出 AffectGPT。核心差异不是简单增加编码器，而是在进入 LLM 之前加入预融合与投影模块，让音频和视频先发生跨模态交互，再把融合表示与提示词送入语言模型；LoRA 用于参数高效适配。</p>
             </figure></div>
         </section>
     <section class="detail-section limitation-section">
-          <div class="section-kicker">GPT ANALYSIS ? LIMITATIONS</div>
-          <h2>????????</h2>
-          <p class="critique-status">???????? ? AnalystInference</p>
-          <p class="analysis-boundary">?????????????????????????????????????????????????????????????????????????????????????</p>
+          <div class="section-kicker">GPT ANALYSIS · LIMITATIONS</div>
+          <h2>对论文不足的思考</h2>
+          <p class="critique-status">摘要级待全文验证 · AnalystInference</p>
+          <p class="analysis-boundary">当前仅完成摘要级阅读，尚未系统核验正文实验、消融、失败案例与数据划分。以下内容是按“问题—理解—方法—证据—表达”框架提出的审查问题，不是作者自述，也不是已经证实的缺陷。</p>
           <ol class="critique-grid">
-            <li><strong>?????</strong><p>?????????? MER ????????????????????????????????????????????????????????????????????????????????????????????</p></li>
-            <li><strong>?????????</strong><p>???????????????????????????????????? ???????????????????????????????????????????????</p></li>
-            <li><strong>???????</strong><p>?????????? MER-Caption?AffectGPT ? MER-UniBench?????????????????????????????????????????????????????????????????????????</p></li>
-            <li><strong>????</strong><p>??????????????????????????????????????????????????????????????</p></li>
-            <li><strong>?????</strong><p>??????????????????????????????????????????????????????????????????</p></li>
-            <li><strong>????????</strong><p>????????????????????????????????????????????????????????????</p></li>
-            <li><strong>???????</strong><p>???????????????????????????????????????????????????????????????????????</p></li>
+            <li><strong>问题与新意</strong><p>当前问题归纳为“现有 MER 缺少大规模、细粒度描述性标注，也缺少适配自然语言输出的统一评测。”。需检查它究竟是新问题、新现象或新理解，还是对已有任务的重新命名；若没有独立观察、统计或理论根因支撑，立意强度应下调。</p></li>
+            <li><strong>问题理解与核心假设</strong><p>数据规模或自动标注质量不等于构念有效性，生成指标也可能偏离真实情感理解。 需要找到作者对该假设的直接论证，并说明假设何时成立、何时失效，而不能只从最终结果倒推其合理性。</p></li>
+            <li><strong>方法—问题对齐</strong><p>当前方法归纳为“构建 MER-Caption、AffectGPT 与 MER-UniBench，并用预融合增强多模态整合。”。需逐模块检查它解决哪个子问题、为什么需要它，以及移除后是否会重新出现论文声称解决的现象；否则可能只是模块机械组合。</p></li>
+            <li><strong>机制证据</strong><p>最终指标提升只能证明相关性。还应检查错误类型、中间表征、注意力或推理轨迹、反事实干预等证据，确认增益确实来自作者声称的机制。</p></li>
+            <li><strong>消融与协同</strong><p>不能只看“去掉模块后分数下降”。应追问哪种能力、样本或模态受损，核心问题是否重新出现，以及各模块之间是否存在协同或更简单的替代方案。</p></li>
+            <li><strong>公平性与替代解释</strong><p>需核对基础模型规模、数据量、额外监督、训练算力、提示模板和调参预算是否对等，排除增益主要来自资源优势或特定数据集偶然性。</p></li>
+            <li><strong>失败边界与表达</strong><p>应重点检查模态缺失或冲突、复合情绪、跨文化和分布外样本。图表还应说明问题、模块关系和机制证据；若只展示网络结构而不连接问题本质，表达仍不充分。</p></li>
           </ol>
         </section>
-    <aside class="evidence-notice"><strong>????</strong><p>????????????????????????????????? ?VISUAL VERIFIED? ??????????????????????</p></aside>
+    <aside class="evidence-notice"><strong>证据边界</strong><p>页面文字按当前语料状态展示。摘要级说明不等同于全文精读；只有标记为 “VISUAL VERIFIED” 的图片才经过来源、页码、图号与裁剪范围复核。</p></aside>
   </main>
-  <footer><p>Emotion Paper Map ? ?????</p></footer>
+  <footer><p>Emotion Paper Map · 论文详情页</p></footer>
 </body>
 </html>

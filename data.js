@@ -12,7 +12,8 @@ window.PAPER_CATALOG = {
           "图证：P001 AffectGPT 的 Figure 1（PDF p.2）作为动机图、Figure 3（PDF p.5）作为方法图，均核对图号、caption、模块文字和裁剪边界后标记为 `visual-verified`。",
           "工具：新增本地 PDF 校验、Figure caption 定位、候选裁剪和可选 PP-StructureV3 解析脚本；候选不会自动进入网站。",
           "环境：创建隔离环境 `wyh_paddleocr_docs`，安装 PaddleOCR 3.7.0、PaddlePaddle 3.3.1、PaddleX 3.7.2 与 PyMuPDF 1.28.2；未使用托管 API。",
-          "边界：其余 113 篇显示“图证待补”；摘要级说明不冒充全文精读，只有视觉复核通过的图片可以公开。"
+          "边界：其余 113 篇显示“图证待补”；摘要级说明不冒充全文精读，只有视觉复核通过的图片可以公开。",
+          "发布：静态站点已同步到公开仓库提交 `f88a068c77d19532cbbafdb540fc72e6ea986643`；Pages 构建完成，抽查首页、P001/P002 详情页与两张 P001 图均为 HTTP 200。"
         ]
       },
       {

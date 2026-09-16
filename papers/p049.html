@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EmoSync: Multi-Stage Reasoning with Multimodal Large Language Models for Fine-Grained Emotion Recognition 的研究动机、方法思路与图证">
+  <title>EmoSync: Multi-Stage Reasoning with Multimodal Large Language Models for Fine-Grained Emotion Recognition · Emotion Paper Map</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/detail.css">
+</head>
+<body>
+  <header class="topbar detail-topbar"><a class="brand" href="../index.html"><span class="brand-mark">情</span><span>Emotion Paper Map</span></a><a href="../index.html#papers">← 返回论文列表</a></header>
+  <main class="detail-main">
+    <article class="detail-hero">
+      <p class="eyebrow">2025 · MRAC 2025 / ACM MM Workshop, Oct 2025</p>
+      <h1>EmoSync: Multi-Stage Reasoning with Multimodal Large Language Models for Fine-Grained Emotion Recognition</h1>
+      <p class="detail-authors">Jintao Tong · Shiwei Li · Zijian Zhuang · Jinghan Hu · Yixiong Zou</p>
+      <div class="detail-tags"><span>证据化与可解释推理</span><span>摘要级自动核验</span><span>abstract-only</span></div>
+      <div class="detail-actions"><a class="button primary" href="https://doi.org/10.1145/3746270.3760231" target="_blank" rel="noreferrer">打开DOI ↗</a></div>
+    </article>
+    <section class="detail-section"><div class="section-kicker">PROBLEM · MOTIVATION</div><h2>研究动机</h2><p>作者指出：第三，依赖单一模式会导致视角偏差，降低产出稳健性。分析者归纳：核心瓶颈是情感结论与可观察线索之间缺少显式、可检查的推理连接。</p><blockquote><strong>摘要证据：</strong> “Third, reliance on a single model results in perspective bias, reducing output robustness.”<br>第三,依赖单一模式会导致视角偏差,降低产出稳健性.</blockquote></section>
+    <section class="detail-section figure-section pending">
+              <div class="section-kicker">MOTIVATION FIGURE</div>
+              <h2>动机图</h2>
+              <div class="figure-placeholder"><strong>图证待补</strong><p>尚未获得并视觉复核该论文的动机图。当前说明只来自摘要或元数据，不能替代全文图证。</p></div>
+              <p>作者指出：第三，依赖单一模式会导致视角偏差，降低产出稳健性。分析者归纳：核心瓶颈是情感结论与可观察线索之间缺少显式、可检查的推理连接。</p>
+            </section>
+    <section class="detail-section"><div class="section-kicker">APPROACH · METHOD</div><h2>方法思路</h2><p>作者的核心方案是：为了应对这些挑战，我们提出EmoSync，一个多阶段推理框架，用于更可靠和更准确的情感识别.(1)除了标准的多模态推论外，我们进行辅助的单模式推理，分别分析每一种模式(如文本，音频，图像)来捕捉不同的情感提示.(2)我们提出逻辑自我修正机制，利用思维链(COT)促使确保自相矛盾的产出…。问题—方法对应关系：显式组织表情、韵律、上下文或理由链，使结论能够对应到具体证据。</p><blockquote><strong>摘要证据：</strong> “To address these challenges, we propose EmoSync, a multi-stage reasoning framework for more reliable and accuracy emotion recognition. (1) Alongside standard multimodal inference, we perform auxiliary unimodal reasoning, analyzing each modality (e.g., text, audio, image) separately to capture diverse emotional cues. (2) We propose a logical self-correction mechanism that leverages chain-of-thought (CoT) prompting to ensure self-consistent outputs, thereby preventing the co-occurrence of emotionally opposite terms in a single prediction. (3) We design an ensemble-of-perspectives strategy, where a large language model (LLM) aggregates predictions from multiple models based on their corresponding evaluation scores, enhancing reliability and reducing emotional conflicts.”<br>为了应对这些挑战,我们提出EmoSync,一个多阶段推理框架,用于更可靠和更准确的情感识别. (1)除了标准的多模式推论外,我们进行辅助的单模式推理,分别分析每一种模式(如文本,音频,图像)来捕捉不同的情感提示. (2)我们提出逻辑自我修正机制,利用思维链(COT)促使确保自相矛盾的产出,从而防止在单一预测中同时出现情感相矛盾的词语. (3)我们设计了综观战略,一个大型语言模型(LLM)根据多个模型的相应评价分数来汇总预测,增强可靠性并减少情感冲突.</blockquote></section>
+    <section class="detail-section figure-section pending">
+              <div class="section-kicker">METHOD FIGURE</div>
+              <h2>方法图</h2>
+              <div class="figure-placeholder"><strong>图证待补</strong><p>尚未获得并视觉复核该论文的方法图。当前说明只来自摘要或元数据，不能替代全文图证。</p></div>
+              <p>作者的核心方案是：为了应对这些挑战，我们提出EmoSync，一个多阶段推理框架，用于更可靠和更准确的情感识别.(1)除了标准的多模态推论外，我们进行辅助的单模式推理，分别分析每一种模式(如文本，音频，图像)来捕捉不同的情感提示.(2)我们提出逻辑自我修正机制，利用思维链(COT)促使确保自相矛盾的产出…。问题—方法对应关系：显式组织表情、韵律、上下文或理由链，使结论能够对应到具体证据。</p>
+            </section>
+    <aside class="evidence-notice"><strong>证据边界</strong><p>页面文字按当前语料状态展示。摘要级说明不等同于全文精读；只有标记为 “VISUAL VERIFIED” 的图片才经过来源、页码、图号与裁剪范围复核。</p></aside>
+  </main>
+  <footer><p>Emotion Paper Map · 论文详情页</p></footer>
+</body>
+</html>

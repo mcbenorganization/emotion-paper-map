@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Do We Really Need Multimodal Emotion Language Models Larger Than 1B Parameters? 的研究动机、方法思路与图证">
+  <title>Do We Really Need Multimodal Emotion Language Models Larger Than 1B Parameters? · Emotion Paper Map</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/detail.css">
+</head>
+<body>
+  <header class="topbar detail-topbar"><a class="brand" href="../index.html"><span class="brand-mark">情</span><span>Emotion Paper Map</span></a><a href="../index.html#papers">← 返回论文列表</a></header>
+  <main class="detail-main">
+    <article class="detail-hero">
+      <p class="eyebrow">2026 · accepted ACM MM 2026; arXiv first submitted 2026-07-14</p>
+      <h1>Do We Really Need Multimodal Emotion Language Models Larger Than 1B Parameters?</h1>
+      <p class="detail-authors">Kaiwen Zheng · Junchen Fu · Wenhao Deng · Hu Han · Joemon M. Jose · Xuri Ge</p>
+      <div class="detail-tags"><span>轻量化、蒸馏与专家迁移</span><span>摘要级自动核验</span><span>abstract-only</span></div>
+      <div class="detail-actions"><a class="button primary" href="https://arxiv.org/pdf/2607.12787" target="_blank" rel="noreferrer">打开PDF ↗</a></div>
+    </article>
+    <section class="detail-section"><div class="section-kicker">PROBLEM · MOTIVATION</div><h2>研究动机</h2><p>作者指出：然而，这些性能的改进往往伴随着模型参数大小的提高(例如至少7B)，这同时会产生高计算成本并降低推论效率，从而阻碍在诸如机器人和移动设备等资源约束平台上实时部署。分析者归纳：核心瓶颈是大模型推理成本较高，而关键情感能力能否被轻量模型保留仍不清楚。</p><blockquote><strong>摘要证据：</strong> “However, these performance improvements are often accompanied by an increase in model parameter size (e.g, at least 7B), which simultaneously incurs high computational costs and reduces inference efficiency, thereby hindering real-time deployment on resource-constrained platforms such as robots and mobile devices.”<br>然而,这些性能的改进往往伴随着模型参数大小的提高(例如至少7B),这同时会产生高计算成本并降低推论效率,从而阻碍在诸如机器人和移动设备等资源约束平台上实时部署.</blockquote></section>
+    <section class="detail-section figure-section pending">
+              <div class="section-kicker">MOTIVATION FIGURE</div>
+              <h2>动机图</h2>
+              <div class="figure-placeholder"><strong>图证待补</strong><p>尚未获得并视觉复核该论文的动机图。当前说明只来自摘要或元数据，不能替代全文图证。</p></div>
+              <p>作者指出：然而，这些性能的改进往往伴随着模型参数大小的提高(例如至少7B)，这同时会产生高计算成本并降低推论效率，从而阻碍在诸如机器人和移动设备等资源约束平台上实时部署。分析者归纳：核心瓶颈是大模型推理成本较高，而关键情感能力能否被轻量模型保留仍不清楚。</p>
+            </section>
+    <section class="detail-section"><div class="section-kicker">APPROACH · METHOD</div><h2>方法思路</h2><p>作者的核心方案是：具体来说，我们引入了两个新的优化战略来增强知识转移：(1)新的优化运输损失，将斯利克德·瓦瑟斯坦远程与隐藏状态对接相结合；(2)新的基于GRPO的多奖优化战略，平衡了市面汇率的表现和效率，旨在进一步提高学生模式的学习能力。问题—方法对应关系：通过蒸馏、专家迁移或结构压缩保留关键能力并降低部署成本。</p><blockquote><strong>摘要证据：</strong> “Specifically, we introduce two new optimization strategies to enhance knowledge transfer: (1) a new optimal transport loss that combines Sliced Wasserstein Distance with hidden-state alignment, and (2) a new multi-reward optimization strategy based on GRPO that balances MER performance and efficiency, aimed at further enhancing the learning capabilities of student models.”<br>具体来说,我们引入了两个新的优化战略来增强知识转移:(1)新的优化运输损失,将斯利克德·瓦瑟斯坦远程与隐藏状态对接相结合;(2)新的基于GRPO的多奖优化战略,平衡了市面汇率的表现和效率,旨在进一步提高学生模式的学习能力.</blockquote></section>
+    <section class="detail-section figure-section pending">
+              <div class="section-kicker">METHOD FIGURE</div>
+              <h2>方法图</h2>
+              <div class="figure-placeholder"><strong>图证待补</strong><p>尚未获得并视觉复核该论文的方法图。当前说明只来自摘要或元数据，不能替代全文图证。</p></div>
+              <p>作者的核心方案是：具体来说，我们引入了两个新的优化战略来增强知识转移：(1)新的优化运输损失，将斯利克德·瓦瑟斯坦远程与隐藏状态对接相结合；(2)新的基于GRPO的多奖优化战略，平衡了市面汇率的表现和效率，旨在进一步提高学生模式的学习能力。问题—方法对应关系：通过蒸馏、专家迁移或结构压缩保留关键能力并降低部署成本。</p>
+            </section>
+    <aside class="evidence-notice"><strong>证据边界</strong><p>页面文字按当前语料状态展示。摘要级说明不等同于全文精读；只有标记为 “VISUAL VERIFIED” 的图片才经过来源、页码、图号与裁剪范围复核。</p></aside>
+  </main>
+  <footer><p>Emotion Paper Map · 论文详情页</p></footer>
+</body>
+</html>

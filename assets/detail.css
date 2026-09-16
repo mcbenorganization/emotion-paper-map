@@ -1,0 +1,22 @@
+.detail-topbar > a:last-child { color: var(--muted); text-decoration: none; }
+.detail-main { width: min(1040px, calc(100% - 2rem)); margin: 0 auto; padding: 8rem 0 5rem; }
+.detail-hero { padding: clamp(2rem, 6vw, 5rem); border: 1px solid var(--line); border-radius: 2rem; background: var(--surface); }
+.detail-hero h1 { max-width: 900px; margin: .6rem 0 1rem; font-size: clamp(2rem, 5vw, 4.6rem); line-height: 1.04; }
+.detail-authors { color: var(--muted); font-size: 1.05rem; }
+.detail-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.4rem 0; }
+.detail-tags span { padding: .45rem .8rem; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); }
+.detail-actions { margin-top: 1.5rem; }
+.detail-section { margin-top: 2rem; padding: clamp(1.5rem, 4vw, 3rem); border: 1px solid var(--line); border-radius: 1.5rem; background: var(--surface); }
+.detail-section h2 { margin: .35rem 0 1.2rem; font-size: clamp(1.5rem, 3vw, 2.3rem); }
+.detail-section p { font-size: 1.06rem; line-height: 1.85; }
+.section-kicker { color: var(--accent); font-size: .76rem; font-weight: 800; letter-spacing: .14em; }
+.detail-section blockquote { margin: 1.4rem 0 0; padding: 1rem 1.2rem; border-left: 3px solid var(--accent); background: var(--bg); color: var(--muted); line-height: 1.7; }
+.figure-section figure { margin: 1.2rem 0; }
+.figure-section img { display: block; width: 100%; max-height: 720px; object-fit: contain; border-radius: 1rem; background: #fff; }
+.figure-section figcaption { margin-top: .8rem; color: var(--muted); line-height: 1.55; }
+.figure-placeholder { min-height: 220px; display: grid; place-content: center; padding: 2rem; text-align: center; border: 1px dashed var(--line); border-radius: 1rem; background: var(--bg); }
+.figure-placeholder strong { font-size: 1.35rem; }
+.figure-placeholder p { max-width: 560px; color: var(--muted); }
+.evidence-notice { margin-top: 2rem; padding: 1.25rem 1.5rem; border-radius: 1rem; background: var(--accent-soft); }
+.evidence-notice p { margin-bottom: 0; }
+@media (max-width: 640px) { .detail-main { padding-top: 6rem; } .detail-hero { border-radius: 1.25rem; } }

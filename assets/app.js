@@ -79,13 +79,14 @@
     return `<article class="paper-card">
       <div class="paper-year">${paper.year || "TBD"}</div>
       <div>
-        <h3 class="paper-title"><a href="${escapeHtml(paper.url)}" target="_blank" rel="noreferrer">${escapeHtml(paper.title)} ↗</a></h3>
+        <h3 class="paper-title"><a href="${escapeHtml(paper.detail_url)}">${escapeHtml(paper.title)}</a></h3>
         <div class="paper-meta"><span>${escapeHtml(authors)}</span><span>${escapeHtml(paper.venue)}</span></div>
         <div class="paper-meta"><span class="tag">${escapeHtml(school.name)}</span><span class="tag status">${escapeHtml(paper.review_status)}</span><span class="tag provenance">${escapeHtml(classificationLabel)}</span><span>${escapeHtml(paper.task)}</span></div>
         <div class="paper-summary">
           <div><strong>PROBLEM · 解决什么</strong><p>${escapeHtml(paper.problem)}</p></div>
           <div><strong>APPROACH · 大致思路</strong><p>${escapeHtml(paper.approach)}</p></div>
         </div>
+        <p class="paper-detail-link"><a href="${escapeHtml(paper.detail_url)}">查看动机图、方法图与论文详情 →</a></p>
         <details>
           <summary>查看证据边界与摘要原句</summary>
           <p class="evidence-level">内容来源：${escapeHtml(summaryLabel)}。自动分类和分析者归纳均待全文复核。</p>

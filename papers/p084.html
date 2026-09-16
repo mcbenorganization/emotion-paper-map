@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Faithful Action-unit Causal Reasoning for Counterfactually Faithful Emotion Explanations 的研究动机、方法思路与图证">
+  <title>Faithful Action-unit Causal Reasoning for Counterfactually Faithful Emotion Explanations · Emotion Paper Map</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/detail.css">
+</head>
+<body>
+  <header class="topbar detail-topbar"><a class="brand" href="../index.html"><span class="brand-mark">情</span><span>Emotion Paper Map</span></a><a href="../index.html#papers">← 返回论文列表</a></header>
+  <main class="detail-main">
+    <article class="detail-hero">
+      <p class="eyebrow">2026 · arXiv preprint, first submitted 2026-06-14</p>
+      <h1>Faithful Action-unit Causal Reasoning for Counterfactually Faithful Emotion Explanations</h1>
+      <p class="detail-authors">Văn-Thống Huỳnh · H. Nguyen · T. Pham · T. Nguyen · Soo-Hyung Kim</p>
+      <div class="detail-tags"><span>证据化与可解释推理</span><span>摘要级自动核验</span><span>abstract-only</span></div>
+      <div class="detail-actions"><a class="button primary" href="https://arxiv.org/pdf/2606.15779" target="_blank" rel="noreferrer">打开PDF ↗</a></div>
+    </article>
+    <section class="detail-section"><div class="section-kicker">PROBLEM · MOTIVATION</div><h2>研究动机</h2><p>作者指出：最后，我们附上一个语言解说器，并将审计范围扩大到生成的文本：通过潜在激活来偏向每个行动单位的排放，使得建筑学的原理是忠实的，这样就让一个非盟从解释中去掉，这个属性转移到了第二个语言模型的主干道上，而自由产生的原理是不忠实的。分析者归纳：核心瓶颈是情感结论与可观察线索之间缺少显式、可检查的推理连接。</p><blockquote><strong>摘要证据：</strong> “Finally, we attach a language verbalizer and extend the audit to the generated text: biasing each action unit&#x27;s emission by its latent activation makes the rationale faithful by construction, so that ablating an AU removes it from the explanation, a property that transfers to a second language-model backbone, whereas a freely generated rationale is unfaithful.”<br>最后,我们附上一个语言解说器,并将审计范围扩大到生成的文本:通过潜在激活来偏向每个行动单位的排放,使得建筑学的原理是忠实的,这样就让一个非盟从解释中去掉,这个属性转移到了第二个语言模型的主干道上,而自由产生的原理是不忠实的。</blockquote></section>
+    <section class="detail-section figure-section pending">
+              <div class="section-kicker">MOTIVATION FIGURE</div>
+              <h2>动机图</h2>
+              <div class="figure-placeholder"><strong>图证待补</strong><p>尚未获得并视觉复核该论文的动机图。当前说明只来自摘要或元数据，不能替代全文图证。</p></div>
+              <p>作者指出：最后，我们附上一个语言解说器，并将审计范围扩大到生成的文本：通过潜在激活来偏向每个行动单位的排放，使得建筑学的原理是忠实的，这样就让一个非盟从解释中去掉，这个属性转移到了第二个语言模型的主干道上，而自由产生的原理是不忠实的。分析者归纳：核心瓶颈是情感结论与可观察线索之间缺少显式、可检查的推理连接。</p>
+            </section>
+    <section class="detail-section"><div class="section-kicker">APPROACH · METHOD</div><h2>方法思路</h2><p>作者的核心方案是：我们把非盟&gt;情绪推理作为逻辑、标签和结构上的非盟&gt;情绪因子G之间的一个反事实-一致性问题，并提议FACR，以独立诱导的、极性-认知G为理由，并训练反事实-信仰目标：G标出某类因子的对非盟的干预必须移动预测，而一个标出不相关的因素则必须保持不变。问题—方法对应关系：显式组织表情、韵律、上下文或理由链，使结论能够对应到具体证据。</p><blockquote><strong>摘要证据：</strong> “We cast AU-&gt;emotion reasoning as a counterfactual-consistency problem between the rationale, the label, and a structural AU-&gt;emotion causal graph G, and propose FACR, which grounds the reasoner in an independently induced, polarity-aware G and trains a counterfactual-faithfulness objective: a do-intervention on an AU that G marks causal for a class must move the prediction, while one it marks irrelevant must leave it unchanged.”<br>我们把非盟&gt;情绪推理作为逻辑、标签和结构上的非盟&gt;情绪因子G之间的一个反事实-一致性问题,并提议FACR, 以独立诱导的、极性-认知G为理由, 并训练反事实-信仰目标: G 标出某类因子的对非盟的干预必须移动预测, 而一个标出不相关的因素则必须保持不变。</blockquote></section>
+    <section class="detail-section figure-section pending">
+              <div class="section-kicker">METHOD FIGURE</div>
+              <h2>方法图</h2>
+              <div class="figure-placeholder"><strong>图证待补</strong><p>尚未获得并视觉复核该论文的方法图。当前说明只来自摘要或元数据，不能替代全文图证。</p></div>
+              <p>作者的核心方案是：我们把非盟&gt;情绪推理作为逻辑、标签和结构上的非盟&gt;情绪因子G之间的一个反事实-一致性问题，并提议FACR，以独立诱导的、极性-认知G为理由，并训练反事实-信仰目标：G标出某类因子的对非盟的干预必须移动预测，而一个标出不相关的因素则必须保持不变。问题—方法对应关系：显式组织表情、韵律、上下文或理由链，使结论能够对应到具体证据。</p>
+            </section>
+    <aside class="evidence-notice"><strong>证据边界</strong><p>页面文字按当前语料状态展示。摘要级说明不等同于全文精读；只有标记为 “VISUAL VERIFIED” 的图片才经过来源、页码、图号与裁剪范围复核。</p></aside>
+  </main>
+  <footer><p>Emotion Paper Map · 论文详情页</p></footer>
+</body>
+</html>

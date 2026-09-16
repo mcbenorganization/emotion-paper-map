@@ -5,6 +5,28 @@ window.PAPER_CATALOG = {
     "source_status": "private-upstream-synced",
     "weekly_updates": [
       {
+        "date": "2026-09-16",
+        "title": "论文详情页与图证流程",
+        "items": [
+          "页面：为 114 篇论文生成独立详情页，展示研究动机、方法思路、摘要证据和图证状态；首页卡片增加详情入口。",
+          "图证：P001 AffectGPT 的 Figure 1（PDF p.2）作为动机图、Figure 3（PDF p.5）作为方法图，均核对图号、caption、模块文字和裁剪边界后标记为 `visual-verified`。",
+          "工具：新增本地 PDF 校验、Figure caption 定位、候选裁剪和可选 PP-StructureV3 解析脚本；候选不会自动进入网站。",
+          "环境：创建隔离环境 `wyh_paddleocr_docs`，安装 PaddleOCR 3.7.0、PaddlePaddle 3.3.1、PaddleX 3.7.2 与 PyMuPDF 1.28.2；未使用托管 API。",
+          "边界：其余 113 篇显示“图证待补”；摘要级说明不冒充全文精读，只有视觉复核通过的图片可以公开。"
+        ]
+      },
+      {
+        "date": "2026-09-16",
+        "title": "GitHub Pages 首次上线",
+        "items": [
+          "仓库：创建公开仓库 `mcbenorganization/emotion-paper-map`，只提交脱敏后的静态站点文件与 `.nojekyll`。",
+          "地址：启用 GitHub Pages，来源为公开仓库 `main` 根目录；线上地址为 <https://mcbenorganization.github.io/emotion-paper-map/>。",
+          "隔离：完整论文台账、脚本、记忆和缓存继续保存在私有 `study-process`，公开仓库不包含这些内部资产。",
+          "验证：Pages 状态为 `built`；首页、`data.js`、`app.js`、`style.css` 均返回 HTTP 200，线上四个文件与本地构建字节级一致。",
+          "后续：每周先在私有源仓库生成和审核更新，再同步 `site/` 到公开 Pages 仓库；尚未启用无人审核的自动发布。"
+        ]
+      },
+      {
         "date": "2026-09-15",
         "title": "网站公开化、表达重构与自动分类升级",
         "items": [
@@ -176,7 +198,28 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://arxiv.org/abs/2501.16566",
       "source": "https://arxiv.org/pdf/2501.16566",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p001.html",
+      "figures": {
+        "motivation": {
+          "image": "figures/P001/P001_Fig1_PDFp2_motivation.png",
+          "figure_number": "Figure 1",
+          "pdf_page": 2,
+          "caption": "Emotion complexity analysis. Human emotions are often diverse and coexist simultaneously. Such complex emotional states are difficult to describe using discriminative frameworks. However, MLLMs can generate emotional descriptions, offering new possibilities for complex emotion modeling.",
+          "description": "这张图用“情绪多样性”和“多种情绪共存”两个案例说明研究动机：把样本压缩成预定义单标签会丢掉复合、细粒度情绪信息，而多模态大模型可以输出开放式情绪描述。它支持的是问题设定与表达空间的动机，不直接证明模型性能。",
+          "source_url": "https://arxiv.org/pdf/2501.16566",
+          "review_status": "visual-verified"
+        },
+        "method": {
+          "image": "figures/P001/P001_Fig3_PDFp5_method.png",
+          "figure_number": "Figure 3",
+          "pdf_page": 5,
+          "caption": "Model comparison. ALLM and VLLM primarily use modality-specific encoders and align them with the LLM through projection layers. AV-LLM mainly facilitates cross-modal interaction within the language model. In AffectGPT, we move the cross-modal interaction outside the language model and use a pre-fusion operation to enhance multimodal integration.",
+          "description": "图中先对比音频 LLM、视频 LLM 和常见音视频 LLM，再给出 AffectGPT。核心差异不是简单增加编码器，而是在进入 LLM 之前加入预融合与投影模块，让音频和视频先发生跨模态交互，再把融合表示与提示词送入语言模型；LoRA 用于参数高效适配。",
+          "source_url": "https://arxiv.org/pdf/2501.16566",
+          "review_status": "visual-verified"
+        }
+      }
     },
     {
       "id": "P002",
@@ -207,7 +250,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://arxiv.org/abs/2408.11286",
       "source": "https://arxiv.org/pdf/2408.11286",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p002.html",
+      "figures": {}
     },
     {
       "id": "P003",
@@ -240,7 +285,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://doi.org/10.1587/transinf.2024edl8034",
       "source": "https://doi.org/10.1587/transinf.2024edl8034",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p003.html",
+      "figures": {}
     },
     {
       "id": "P004",
@@ -272,7 +319,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://doi.org/10.1145/3689092.3689403",
       "source": "https://doi.org/10.1145/3689092.3689403",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p004.html",
+      "figures": {}
     },
     {
       "id": "P005",
@@ -306,7 +355,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://doi.org/10.21437/odyssey.2024-41",
       "source": "https://doi.org/10.21437/odyssey.2024-41",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p005.html",
+      "figures": {}
     },
     {
       "id": "P006",
@@ -339,7 +390,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://arxiv.org/abs/2509.04480",
       "source": "https://arxiv.org/pdf/2509.04480",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p006.html",
+      "figures": {}
     },
     {
       "id": "P007",
@@ -374,7 +427,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://doi.org/10.1145/3746027.3762066",
       "source": "https://doi.org/10.1145/3746027.3762066",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p007.html",
+      "figures": {}
     },
     {
       "id": "P008",
@@ -404,7 +459,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://arxiv.org/abs/2509.24322",
       "source": "https://arxiv.org/pdf/2509.24322",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p008.html",
+      "figures": {}
     },
     {
       "id": "P009",
@@ -438,7 +495,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2608.18386",
       "source": "https://arxiv.org/pdf/2608.18386",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p009.html",
+      "figures": {}
     },
     {
       "id": "P010",
@@ -474,7 +533,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2605.21239",
       "source": "https://arxiv.org/pdf/2605.21239",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p010.html",
+      "figures": {}
     },
     {
       "id": "P011",
@@ -510,7 +571,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2607.27790",
       "source": "https://arxiv.org/pdf/2607.27790",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p011.html",
+      "figures": {}
     },
     {
       "id": "P012",
@@ -545,7 +608,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2608.03358",
       "source": "https://arxiv.org/pdf/2608.03358",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p012.html",
+      "figures": {}
     },
     {
       "id": "P013",
@@ -587,7 +652,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2608.05825",
       "source": "https://arxiv.org/pdf/2608.05825",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p013.html",
+      "figures": {}
     },
     {
       "id": "P014",
@@ -622,7 +689,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2608.06013",
       "source": "https://arxiv.org/pdf/2608.06013",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p014.html",
+      "figures": {}
     },
     {
       "id": "P015",
@@ -654,7 +723,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://doi.org/10.1109/ICASSP55912.2026.11464500",
       "source": "https://doi.org/10.1109/ICASSP55912.2026.11464500",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p015.html",
+      "figures": {}
     },
     {
       "id": "P016",
@@ -690,7 +761,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2608.10796",
       "source": "https://arxiv.org/pdf/2608.10796",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p016.html",
+      "figures": {}
     },
     {
       "id": "P017",
@@ -723,7 +796,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2608.13239",
       "source": "https://arxiv.org/pdf/2608.13239",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p017.html",
+      "figures": {}
     },
     {
       "id": "P018",
@@ -758,7 +833,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2608.13974",
       "source": "https://arxiv.org/pdf/2608.13974",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p018.html",
+      "figures": {}
     },
     {
       "id": "P019",
@@ -795,7 +872,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2605.05640",
       "source": "https://arxiv.org/pdf/2605.05640",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p019.html",
+      "figures": {}
     },
     {
       "id": "P020",
@@ -829,7 +908,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2607.25961",
       "source": "https://arxiv.org/pdf/2607.25961",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p020.html",
+      "figures": {}
     },
     {
       "id": "P021",
@@ -854,7 +935,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://doi.org/10.1145/3767308.3835759",
       "source": "https://doi.org/10.1145/3767308.3835759",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p021.html",
+      "figures": {}
     },
     {
       "id": "P022",
@@ -891,7 +974,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2607.24191",
       "source": "https://arxiv.org/pdf/2607.24191",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p022.html",
+      "figures": {}
     },
     {
       "id": "P023",
@@ -926,7 +1011,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2605.19950",
       "source": "https://arxiv.org/pdf/2605.19950",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p023.html",
+      "figures": {}
     },
     {
       "id": "P024",
@@ -965,7 +1052,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2606.27652",
       "source": "https://arxiv.org/pdf/2606.27652",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p024.html",
+      "figures": {}
     },
     {
       "id": "P025",
@@ -1000,7 +1089,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2601.15668",
       "source": "https://arxiv.org/pdf/2601.15668",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p025.html",
+      "figures": {}
     },
     {
       "id": "P026",
@@ -1033,7 +1124,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2603.20894",
       "source": "https://arxiv.org/pdf/2603.20894",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p026.html",
+      "figures": {}
     },
     {
       "id": "P027",
@@ -1060,7 +1153,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://ojs.aaai.org/index.php/AAAI/article/view/39906",
       "source": "https://ojs.aaai.org/index.php/AAAI/article/view/39906",
-      "source_kind": "Paper page"
+      "source_kind": "Paper page",
+      "detail_url": "papers/p027.html",
+      "figures": {}
     },
     {
       "id": "P028",
@@ -1092,7 +1187,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2505.07164",
       "source": "https://arxiv.org/pdf/2505.07164",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p028.html",
+      "figures": {}
     },
     {
       "id": "P029",
@@ -1130,7 +1227,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/c7f43ada17acc234f568dc66da527418-Abstract-Conference.html",
       "source": "https://proceedings.neurips.cc/paper_files/paper/2024/file/c7f43ada17acc234f568dc66da527418-Paper-Conference.pdf",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p029.html",
+      "figures": {}
     },
     {
       "id": "P030",
@@ -1167,7 +1266,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://papers.nips.cc/paper_files/paper/2024/hash/d611d5c0251d9680f869c5d2c46c6fcd-Abstract-Datasets_and_Benchmarks_Track.html",
       "source": "https://proceedings.neurips.cc/paper_files/paper/2024/file/d611d5c0251d9680f869c5d2c46c6fcd-Paper-Datasets_and_Benchmarks_Track.pdf",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p030.html",
+      "figures": {}
     },
     {
       "id": "P031",
@@ -1198,7 +1299,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://aclanthology.org/2024.semeval-1.249",
       "source": "https://aclanthology.org/2024.semeval-1.249.pdf",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p031.html",
+      "figures": {}
     },
     {
       "id": "P032",
@@ -1234,7 +1337,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://dl.acm.org/doi/10.1145/3689092.3689404",
       "source": "https://arxiv.org/pdf/2408.10500",
-      "source_kind": "Paper page"
+      "source_kind": "Paper page",
+      "detail_url": "papers/p032.html",
+      "figures": {}
     },
     {
       "id": "P033",
@@ -1268,7 +1373,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2412.08049",
       "source": "https://arxiv.org/pdf/2412.08049",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p033.html",
+      "figures": {}
     },
     {
       "id": "P034",
@@ -1300,7 +1407,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2406.16442",
       "source": "https://arxiv.org/pdf/2406.16442",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p034.html",
+      "figures": {}
     },
     {
       "id": "P035",
@@ -1333,7 +1442,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2405.08992",
       "source": "https://arxiv.org/pdf/2405.08992",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p035.html",
+      "figures": {}
     },
     {
       "id": "P036",
@@ -1367,7 +1478,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2409.00304",
       "source": "https://arxiv.org/pdf/2409.00304",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p036.html",
+      "figures": {}
     },
     {
       "id": "P037",
@@ -1398,7 +1511,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2412.17292",
       "source": "https://arxiv.org/pdf/2412.17292",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p037.html",
+      "figures": {}
     },
     {
       "id": "P038",
@@ -1442,7 +1557,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2410.01495",
       "source": "https://arxiv.org/pdf/2410.01495",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p038.html",
+      "figures": {}
     },
     {
       "id": "P039",
@@ -1473,7 +1590,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://aclanthology.org/2025.findings-naacl.97",
       "source": "https://aclanthology.org/2025.findings-naacl.97.pdf",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p039.html",
+      "figures": {}
     },
     {
       "id": "P040",
@@ -1512,7 +1631,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://openaccess.thecvf.com/content/CVPR2025W/NeXD/html/Lin_Why_We_Feel_Breaking_Boundaries_in_Emotional_Reasoning_with_Multimodal_CVPRW_2025_paper.html",
       "source": "https://openaccess.thecvf.com/content/CVPR2025W/NeXD/papers/Lin_Why_We_Feel_Breaking_Boundaries_in_Emotional_Reasoning_with_Multimodal_CVPRW_2025_paper.pdf",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p040.html",
+      "figures": {}
     },
     {
       "id": "P041",
@@ -1537,7 +1658,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://ieeexplore.ieee.org/document/11227260",
       "source": "https://ieeexplore.ieee.org/document/11227260",
-      "source_kind": "Paper page"
+      "source_kind": "Paper page",
+      "detail_url": "papers/p041.html",
+      "figures": {}
     },
     {
       "id": "P042",
@@ -1572,7 +1695,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://dl.acm.org/doi/10.1145/3746027.3755411",
       "source": "https://doi.org/10.1145/3746027.3755411",
-      "source_kind": "Paper page"
+      "source_kind": "Paper page",
+      "detail_url": "papers/p042.html",
+      "figures": {}
     },
     {
       "id": "P043",
@@ -1600,7 +1725,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://dl.acm.org/doi/10.1145/3746027.3754856",
       "source": "https://doi.org/10.1145/3746027.3754856",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p043.html",
+      "figures": {}
     },
     {
       "id": "P044",
@@ -1635,7 +1762,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://dl.acm.org/doi/10.1145/3746027.3755726",
       "source": "https://doi.org/10.1145/3746027.3755726",
-      "source_kind": "Paper page"
+      "source_kind": "Paper page",
+      "detail_url": "papers/p044.html",
+      "figures": {}
     },
     {
       "id": "P045",
@@ -1670,7 +1799,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://dl.acm.org/doi/10.1145/3746027.3762009",
       "source": "https://doi.org/10.1145/3746027.3762009",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p045.html",
+      "figures": {}
     },
     {
       "id": "P046",
@@ -1707,7 +1838,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://dl.acm.org/doi/10.1145/3746027.3755352",
       "source": "https://doi.org/10.1145/3746027.3755352",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p046.html",
+      "figures": {}
     },
     {
       "id": "P047",
@@ -1743,7 +1876,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://dl.acm.org/doi/10.1145/3746027.3755777",
       "source": "https://arxiv.org/pdf/2504.16405",
-      "source_kind": "Paper page"
+      "source_kind": "Paper page",
+      "detail_url": "papers/p047.html",
+      "figures": {}
     },
     {
       "id": "P048",
@@ -1790,7 +1925,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://dl.acm.org/doi/10.1145/3746027.3762007",
       "source": "https://doi.org/10.1145/3746027.3762007",
-      "source_kind": "Paper page"
+      "source_kind": "Paper page",
+      "detail_url": "papers/p048.html",
+      "figures": {}
     },
     {
       "id": "P049",
@@ -1824,7 +1961,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://dl.acm.org/doi/10.1145/3746270.3760231",
       "source": "https://doi.org/10.1145/3746270.3760231",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p049.html",
+      "figures": {}
     },
     {
       "id": "P050",
@@ -1854,7 +1993,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "metadata-only",
       "url": "https://aclanthology.org/2025.findings-emnlp.386",
       "source": "https://aclanthology.org/2025.findings-emnlp.386.pdf",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p050.html",
+      "figures": {}
     },
     {
       "id": "P051",
@@ -1879,7 +2020,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://papers.nips.cc/paper_files/paper/2025/file/74512f3c5831ea3fbd04984cb1a2d29d-Paper-Conference.pdf",
       "source": "https://papers.nips.cc/paper_files/paper/2025/file/74512f3c5831ea3fbd04984cb1a2d29d-Paper-Conference.pdf",
-      "source_kind": "Paper page"
+      "source_kind": "Paper page",
+      "detail_url": "papers/p051.html",
+      "figures": {}
     },
     {
       "id": "P052",
@@ -1906,7 +2049,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://ieeexplore.ieee.org/document/11088104",
       "source": "https://ieeexplore.ieee.org/document/11088104",
-      "source_kind": "Paper page"
+      "source_kind": "Paper page",
+      "detail_url": "papers/p052.html",
+      "figures": {}
     },
     {
       "id": "P053",
@@ -1931,7 +2076,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://doi.org/10.1016/j.inffus.2024.102663",
       "source": "https://doi.org/10.1016/j.inffus.2024.102663",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p053.html",
+      "figures": {}
     },
     {
       "id": "P054",
@@ -1963,7 +2110,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2503.05379",
       "source": "https://arxiv.org/pdf/2503.05379",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p054.html",
+      "figures": {}
     },
     {
       "id": "P055",
@@ -1996,7 +2145,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2501.09502",
       "source": "https://arxiv.org/pdf/2501.09502",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p055.html",
+      "figures": {}
     },
     {
       "id": "P056",
@@ -2031,7 +2182,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2505.11405",
       "source": "https://arxiv.org/pdf/2505.11405",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p056.html",
+      "figures": {}
     },
     {
       "id": "P057",
@@ -2068,7 +2221,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2502.04424",
       "source": "https://arxiv.org/pdf/2502.04424",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p057.html",
+      "figures": {}
     },
     {
       "id": "P058",
@@ -2109,7 +2264,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2505.06685",
       "source": "https://arxiv.org/pdf/2505.06685",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p058.html",
+      "figures": {}
     },
     {
       "id": "P059",
@@ -2146,7 +2303,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2508.01318",
       "source": "https://arxiv.org/pdf/2508.01318",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p059.html",
+      "figures": {}
     },
     {
       "id": "P060",
@@ -2182,7 +2341,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2511.02794",
       "source": "https://arxiv.org/pdf/2511.02794",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p060.html",
+      "figures": {}
     },
     {
       "id": "P061",
@@ -2217,7 +2378,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2505.24423",
       "source": "https://arxiv.org/pdf/2505.24423",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p061.html",
+      "figures": {}
     },
     {
       "id": "P062",
@@ -2252,7 +2415,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2503.23990",
       "source": "https://arxiv.org/pdf/2503.23990",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p062.html",
+      "figures": {}
     },
     {
       "id": "P063",
@@ -2298,7 +2463,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2510.07355",
       "source": "https://arxiv.org/pdf/2510.07355",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p063.html",
+      "figures": {}
     },
     {
       "id": "P064",
@@ -2337,7 +2504,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2507.04635",
       "source": "https://arxiv.org/pdf/2507.04635",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p064.html",
+      "figures": {}
     },
     {
       "id": "P065",
@@ -2371,7 +2540,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2509.21950",
       "source": "https://arxiv.org/pdf/2509.21950",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p065.html",
+      "figures": {}
     },
     {
       "id": "P066",
@@ -2411,7 +2582,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2507.04278",
       "source": "https://arxiv.org/pdf/2507.04278",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p066.html",
+      "figures": {}
     },
     {
       "id": "P067",
@@ -2447,7 +2620,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2511.10059",
       "source": "https://arxiv.org/pdf/2511.10059",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p067.html",
+      "figures": {}
     },
     {
       "id": "P068",
@@ -2483,7 +2658,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2512.20938",
       "source": "https://arxiv.org/pdf/2512.20938",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p068.html",
+      "figures": {}
     },
     {
       "id": "P069",
@@ -2511,7 +2688,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://openreview.net/forum",
       "source": "https://openreview.net/forum",
-      "source_kind": "Paper page"
+      "source_kind": "Paper page",
+      "detail_url": "papers/p069.html",
+      "figures": {}
     },
     {
       "id": "P070",
@@ -2547,7 +2726,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "metadata-only",
       "url": "https://aclanthology.org/2026.findings-acl.1018",
       "source": "https://aclanthology.org/2026.findings-acl.1018.pdf",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p070.html",
+      "figures": {}
     },
     {
       "id": "P071",
@@ -2583,7 +2764,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "metadata-only",
       "url": "https://aclanthology.org/2026.findings-acl.1044",
       "source": "https://aclanthology.org/2026.findings-acl.1044.pdf",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p071.html",
+      "figures": {}
     },
     {
       "id": "P072",
@@ -2617,7 +2800,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "metadata-only",
       "url": "https://aclanthology.org/2026.findings-acl.1012",
       "source": "https://aclanthology.org/2026.findings-acl.1012.pdf",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p072.html",
+      "figures": {}
     },
     {
       "id": "P073",
@@ -2652,7 +2837,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "metadata-only",
       "url": "https://aclanthology.org/2026.findings-acl.1263",
       "source": "https://aclanthology.org/2026.findings-acl.1263.pdf",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p073.html",
+      "figures": {}
     },
     {
       "id": "P074",
@@ -2689,7 +2876,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "metadata-only",
       "url": "https://aclanthology.org/2026.findings-acl.1813",
       "source": "https://aclanthology.org/2026.findings-acl.1813.pdf",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p074.html",
+      "figures": {}
     },
     {
       "id": "P075",
@@ -2722,7 +2911,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "metadata-only",
       "url": "https://aclanthology.org/2026.acl-long.1813",
       "source": "https://aclanthology.org/2026.acl-long.1813.pdf",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p075.html",
+      "figures": {}
     },
     {
       "id": "P076",
@@ -2754,7 +2945,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Chaubey_MoD-DPO_Towards_Mitigating_Cross-modal_Hallucinations_in_Omni_LLMs_using_Modality_CVPR_2026_paper.html",
       "source": "https://openaccess.thecvf.com/content/CVPR2026/papers/Chaubey_MoD-DPO_Towards_Mitigating_Cross-modal_Hallucinations_in_Omni_LLMs_using_Modality_CVPR_2026_paper.pdf",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p076.html",
+      "figures": {}
     },
     {
       "id": "P077",
@@ -2793,7 +2986,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://doi.org/10.1109/TAFFC.2026.3707634",
       "source": "https://doi.org/10.1109/TAFFC.2026.3707634",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p077.html",
+      "figures": {}
     },
     {
       "id": "P078",
@@ -2830,7 +3025,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://doi.org/10.1109/TAFFC.2026.3700274",
       "source": "https://doi.org/10.1109/TAFFC.2026.3700274",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p078.html",
+      "figures": {}
     },
     {
       "id": "P079",
@@ -2863,7 +3060,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://doi.org/10.1609/aaai.v40i3.37184",
       "source": "https://doi.org/10.1609/aaai.v40i3.37184",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p079.html",
+      "figures": {}
     },
     {
       "id": "P080",
@@ -2888,7 +3087,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://face-llava.github.io",
       "source": "https://face-llava.github.io",
-      "source_kind": "Paper page"
+      "source_kind": "Paper page",
+      "detail_url": "papers/p080.html",
+      "figures": {}
     },
     {
       "id": "P081",
@@ -2925,7 +3126,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://dl.acm.org/doi/10.1145/3805622.3810634",
       "source": "https://doi.org/10.1145/3805622.3810634",
-      "source_kind": "Paper page"
+      "source_kind": "Paper page",
+      "detail_url": "papers/p081.html",
+      "figures": {}
     },
     {
       "id": "P082",
@@ -2961,7 +3164,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://doi.org/10.36227/techrxiv.177069663.35633248/v1",
       "source": "https://doi.org/10.36227/techrxiv.177069663.35633248/v1",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p082.html",
+      "figures": {}
     },
     {
       "id": "P083",
@@ -2995,7 +3200,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2602.12714",
       "source": "https://arxiv.org/pdf/2602.12714",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p083.html",
+      "figures": {}
     },
     {
       "id": "P084",
@@ -3028,7 +3235,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2606.15779",
       "source": "https://arxiv.org/pdf/2606.15779",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p084.html",
+      "figures": {}
     },
     {
       "id": "P085",
@@ -3064,7 +3273,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2603.16463",
       "source": "https://arxiv.org/pdf/2603.16463",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p085.html",
+      "figures": {}
     },
     {
       "id": "P086",
@@ -3098,7 +3309,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2601.18321",
       "source": "https://arxiv.org/pdf/2601.18321",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p086.html",
+      "figures": {}
     },
     {
       "id": "P087",
@@ -3136,7 +3349,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2605.18884",
       "source": "https://arxiv.org/pdf/2605.18884",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p087.html",
+      "figures": {}
     },
     {
       "id": "P088",
@@ -3173,7 +3388,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2605.04877",
       "source": "https://arxiv.org/pdf/2605.04877",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p088.html",
+      "figures": {}
     },
     {
       "id": "P089",
@@ -3211,7 +3428,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2602.05496",
       "source": "https://arxiv.org/pdf/2602.05496",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p089.html",
+      "figures": {}
     },
     {
       "id": "P090",
@@ -3254,7 +3473,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2601.16449",
       "source": "https://arxiv.org/pdf/2601.16449",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p090.html",
+      "figures": {}
     },
     {
       "id": "P091",
@@ -3291,7 +3512,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2602.23802",
       "source": "https://arxiv.org/pdf/2602.23802",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p091.html",
+      "figures": {}
     },
     {
       "id": "P092",
@@ -3328,7 +3551,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2604.23348",
       "source": "https://arxiv.org/pdf/2604.23348",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p092.html",
+      "figures": {}
     },
     {
       "id": "P093",
@@ -3368,7 +3593,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2605.06126",
       "source": "https://arxiv.org/pdf/2605.06126",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p093.html",
+      "figures": {}
     },
     {
       "id": "P094",
@@ -3407,7 +3634,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2606.15920",
       "source": "https://arxiv.org/pdf/2606.15920",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p094.html",
+      "figures": {}
     },
     {
       "id": "P095",
@@ -3440,7 +3669,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2601.07565",
       "source": "https://arxiv.org/pdf/2601.07565",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p095.html",
+      "figures": {}
     },
     {
       "id": "P096",
@@ -3474,7 +3705,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2605.15755",
       "source": "https://arxiv.org/pdf/2605.15755",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p096.html",
+      "figures": {}
     },
     {
       "id": "P097",
@@ -3521,7 +3754,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2604.19417",
       "source": "https://arxiv.org/pdf/2604.19417",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p097.html",
+      "figures": {}
     },
     {
       "id": "P098",
@@ -3561,7 +3796,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2602.00971",
       "source": "https://arxiv.org/pdf/2602.00971",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p098.html",
+      "figures": {}
     },
     {
       "id": "P099",
@@ -3596,7 +3833,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2607.10238",
       "source": "https://arxiv.org/pdf/2607.10238",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p099.html",
+      "figures": {}
     },
     {
       "id": "P100",
@@ -3631,7 +3870,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2607.11102",
       "source": "https://arxiv.org/pdf/2607.11102",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p100.html",
+      "figures": {}
     },
     {
       "id": "P101",
@@ -3666,7 +3907,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2607.12787",
       "source": "https://arxiv.org/pdf/2607.12787",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p101.html",
+      "figures": {}
     },
     {
       "id": "P102",
@@ -3698,7 +3941,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://doi.org/10.3390/informatics13070110",
       "source": "https://doi.org/10.3390/informatics13070110",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p102.html",
+      "figures": {}
     },
     {
       "id": "P103",
@@ -3728,7 +3973,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://doi.org/10.1007/978-981-92-3432-5_42",
       "source": "https://doi.org/10.1007/978-981-92-3432-5_42",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p103.html",
+      "figures": {}
     },
     {
       "id": "P104",
@@ -3761,7 +4008,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://doi.org/10.1007/978-981-92-3444-8_34",
       "source": "https://doi.org/10.1007/978-981-92-3444-8_34",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p104.html",
+      "figures": {}
     },
     {
       "id": "P105",
@@ -3795,7 +4044,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://doi.org/10.1109/TAFFC.2026.3713090",
       "source": "https://doi.org/10.1109/TAFFC.2026.3713090",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p105.html",
+      "figures": {}
     },
     {
       "id": "P106",
@@ -3831,7 +4082,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://doi.org/10.1109/JSTSP.2026.3713077",
       "source": "https://doi.org/10.1109/JSTSP.2026.3713077",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p106.html",
+      "figures": {}
     },
     {
       "id": "P107",
@@ -3865,7 +4118,9 @@ window.PAPER_CATALOG = {
       "summary_origin": null,
       "url": "https://doi.org/10.1016/j.ipm.2026.105044",
       "source": "https://doi.org/10.1016/j.ipm.2026.105044",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p107.html",
+      "figures": {}
     },
     {
       "id": "P108",
@@ -3903,7 +4158,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2607.18508",
       "source": "https://arxiv.org/pdf/2607.18508",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p108.html",
+      "figures": {}
     },
     {
       "id": "P109",
@@ -3936,7 +4193,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2607.21013",
       "source": "https://arxiv.org/pdf/2607.21013",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p109.html",
+      "figures": {}
     },
     {
       "id": "P110",
@@ -3972,7 +4231,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2607.21061",
       "source": "https://arxiv.org/pdf/2607.21061",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p110.html",
+      "figures": {}
     },
     {
       "id": "P111",
@@ -4006,7 +4267,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://doi.org/10.1145/3805712.3809910",
       "source": "https://doi.org/10.1145/3805712.3809910",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p111.html",
+      "figures": {}
     },
     {
       "id": "P112",
@@ -4039,7 +4302,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://arxiv.org/abs/2604.15280",
       "source": "https://arxiv.org/pdf/2604.15280",
-      "source_kind": "PDF"
+      "source_kind": "PDF",
+      "detail_url": "papers/p112.html",
+      "figures": {}
     },
     {
       "id": "P113",
@@ -4072,7 +4337,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://doi.org/10.1145/3810987.3815534",
       "source": "https://doi.org/10.1145/3810987.3815534",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p113.html",
+      "figures": {}
     },
     {
       "id": "P114",
@@ -4104,7 +4371,9 @@ window.PAPER_CATALOG = {
       "summary_origin": "abstract-evidence-plus-analyst-inference",
       "url": "https://doi.org/10.21203/rs.3.rs-10615076/v1",
       "source": "https://doi.org/10.21203/rs.3.rs-10615076/v1",
-      "source_kind": "DOI"
+      "source_kind": "DOI",
+      "detail_url": "papers/p114.html",
+      "figures": {}
     }
   ]
 };
